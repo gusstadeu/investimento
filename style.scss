@@ -1,0 +1,146 @@
+* {
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #d5dfff;
+    margin: 0;
+    padding: 20px;
+    height: 100vh;
+    width: 100vw;
+    color: #fff;
+
+    
+    .container {
+      display: flex;    
+      height: 100%;
+
+      .content {
+        max-width: 400px;
+        width: 100%;
+        background-color: #1B264F;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin: auto;
+        height: 93%;
+        h1 {
+          text-align: center;
+          margin: 0;
+          margin-bottom: 15px;
+          font-size: 20px;
+        }
+        label {
+          font-weight: bold;
+          margin-top: 10px;
+          font-size: 14px;
+          display: block;
+        }
+        .input-flex {
+          display: flex;
+          margin-bottom: 20px;
+          #value_vencimento {
+            background-color: transparent;
+            border: none;
+            padding: 0px;
+            border: none;
+            color: #fff;
+          }
+          #value_vencimento:focus {
+            color: #777777;
+          }
+
+            input {
+              background-color: #1B264F;
+              width: 100%;
+              padding: 8px;
+              padding-bottom: 4px;
+              padding-top: 13px;
+              font-size: 15px;
+              border: none;
+              border-bottom: 1px solid #ccc;
+              border-radius: 0px;
+              color: #ffffff;
+
+          }
+          input:focus {
+            color: #ffffff;
+            box-shadow: 0 0 0 0;
+            border: 0 none;
+            outline: 0;
+            border: none;
+            border-bottom: 1px solid #ccc;
+          }
+          span {
+            padding: 14.50px 0 4px;
+            border-bottom: 1px solid #ccc;
+            height: fit-content;
+            width: 25%;
+            text-align: right;
+          }
+        }
+        .box-button {
+          width: 100%;
+          button {
+            width: 100%;
+            padding: 10px;
+            background-color: #357DED;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+          }
+          button:hover {
+            background-color: #205ab6;
+          }
+        }
+      }
+    }
+    .result {
+      padding: 10px;
+      border-radius: 4px;
+      margin-top: 15px;
+      
+      .card {
+        color: #1B264F;
+        background-color: #fff;
+        border: 5px solid #357DED;
+        padding: 5px 20px 20px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        .standard {
+          display: flex;
+          .boxes {
+            width: 50%;
+            .title-valor {
+              color: #1B264F;
+              font-size: 12px;
+              text-align: right;
+            }
+            .value-destaq {
+              color: #1B264F;
+              text-align: right;
+              font-size: 24px;
+            }
+          }
+        }
+      }
+      .best {
+        color: #1B264F;
+        background-color: #357DED;
+        border: 5px solid #fff;
+        padding: 5px 20px 20px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        
+      }
+    }
+  }
+
+}

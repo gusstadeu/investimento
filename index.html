@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+  <title>Calculadora de Investimento</title>
+</head>
+<body>
+  <div class="container">
+    <div class="content">
+      <h1>INVESTIMENTO</h1>
+      <label for="valorAplicacao">Valor da Aplicação</label>
+      <div class="box-input">
+        <div class="input-flex">
+          <span style="text-align: left; width: auto;">R$</span><input type="number" id="valorAplicacao" placeholder="1000" /><span>,00</span>
+        </div>
+        <label for="vencimento">Vencimento (dias)</label>
+        <div class="input-flex">
+          <input type="number" id="vencimento" placeholder="360" />
+          <span>
+            <select name="value_vencimento" id="value_vencimento">
+            <option value="dia">Dias</option>
+            <option value="mes">Meses</option>
+            <option value="ano">Anos</option>
+          </select>
+        </span>
+        </div>
+        <label for="taxaDi">Taxa DI</label>
+        <div class="input-flex">
+          <input type="number" id="taxaDi" placeholder="10,65" step="0.01" /><span>% ao ano</span>
+        </div>
+        <label for="taxaSelic">Taxa Selic</label>
+        <div class="input-flex">
+          <input type="number" id="taxaSelic" placeholder="10,75" step="0.01" /><span>% ao ano</span>
+        </div>
+        <label for="percentualCdb">CDB/RDB/LC</label>
+        <div class="input-flex">
+          <input type="number" id="percentualCdb" placeholder="100" step="1" /><span>% DI</span>
+        </div>
+        <label for="percentualLci">LCI/LCA</label>
+        <div class="input-flex">
+          <input type="number" id="percentualLci" placeholder="100" step="1" /><span>% DI</span>
+        </div>
+      </div>
+      <div class="box-button">
+        <button onclick="calcular()">Simulação</button>
+      </div>
+      
+    </div>
+    <div class="content">
+      <div class="result" id="result">
+        <div class="card">
+          <div class="standard">
+            <div class="boxes">
+              <h3>Poupança</h3>
+            </div>
+            <div class="boxes">
+              <div class="title-valor">Total liquido</div>
+              <div class="value-destaq">R$ 1105.04</div>
+            </div>
+          </div>          
+          <p>Valor Investido: R$ 1000,00</p>
+          <p>Rendimento Bruto: R$ 105.04</p>
+        </div>
+
+        <div class="card">
+          <div class="standard">
+            <div class="boxes">
+              <h3>CDB/RDB/LC</h3>
+            </div>
+            <div class="boxes">
+              <div class="title-valor">Valor liquido</div>
+              <div class="value-destaq">R$ 1105.04</div>
+            </div>
+          </div>
+          <p>Valor Investido: R$ 1000,00</p>
+          <p>Rendimento Bruto: R$ 105.04</p>
+        </div>
+          
+        <div class="card best">
+          <div class="standard">
+            <div class="boxes">
+              <h3>LCI/LCA</h3>
+            </div>
+            <div class="boxes">
+              <div class="title-valor">Valor Investido</div>
+              <div class="value-destaq">R$ 1000.00</div>
+            </div>
+          </div>
+          <p>Rendimento Bruto: R$ 105.04</p>
+          <p>Valor Total Líquido: R$ 1105.04</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
