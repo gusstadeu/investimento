@@ -39,21 +39,21 @@
   font-size: 14px;
   display: block;
 }
-* body .container .content .input-flex {
+* body .container .content .inputFlex {
   display: flex;
   margin-bottom: 20px;
 }
-* body .container .content .input-flex #value_vencimento {
+* body .container .content .inputFlex #valueVencimento {
   background-color: transparent;
   border: none;
   padding: 0px;
   border: none;
   color: #fff;
 }
-* body .container .content .input-flex #value_vencimento:focus {
+* body .container .content .inputFlex #valueVencimento:focus {
   color: #777777;
 }
-* body .container .content .input-flex input {
+* body .container .content .inputFlex input {
   background-color: #1B264F;
   width: 100%;
   padding: 8px;
@@ -65,7 +65,7 @@
   border-radius: 0px;
   color: #ffffff;
 }
-* body .container .content .input-flex input:focus {
+* body .container .content .inputFlex input:focus {
   color: #ffffff;
   box-shadow: 0 0 0 0;
   border: 0 none;
@@ -73,7 +73,7 @@
   border: none;
   border-bottom: 1px solid #ccc;
 }
-* body .container .content .input-flex span {
+* body .container .content .inputFlex span {
   padding: 14.5px 0 4px;
   border-bottom: 1px solid #ccc;
   height: -moz-fit-content;
@@ -81,10 +81,10 @@
   width: 25%;
   text-align: right;
 }
-* body .container .content .box-button {
+* body .container .content .boxButton {
   width: 100%;
 }
-* body .container .content .box-button button {
+* body .container .content .boxButton button {
   width: 100%;
   padding: 10px;
   background-color: #357DED;
@@ -95,7 +95,7 @@
   font-size: 16px;
   font-weight: 600;
 }
-* body .container .content .box-button button:hover {
+* body .container .content .boxButton button:hover {
   background-color: #205ab6;
 }
 * body .result {
@@ -117,12 +117,12 @@
 * body .result .card .standard .boxes {
   width: 50%;
 }
-* body .result .card .standard .boxes .title-valor {
+* body .result .card .standard .boxes .titleValor {
   color: #1B264F;
   font-size: 12px;
   text-align: right;
 }
-* body .result .card .standard .boxes .value-destaq {
+* body .result .card .standard .boxes .valueDestaq {
   color: #1B264F;
   text-align: right;
   font-size: 24px;
@@ -134,4 +134,4 @@
   padding: 5px 20px 20px;
   margin-bottom: 20px;
   border-radius: 10px;
-}/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=calcule.module.css.map */
