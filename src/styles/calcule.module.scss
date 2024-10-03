@@ -34,11 +34,27 @@
             margin-bottom: 15px;
             font-size: 20px;
           }
+          .containerInputDividido{
+              justify-content: space-between;
+              display: flex;
+              
+            }
+          .contentInputMetade{
+            width: 45%;
+            .inputFlex {
+              input {
+                width: 50%;
+              }
+              span {
+                width: 50%;
+              }
+            }
+          }
           label {
-            font-weight: bold;
-            margin-top: 10px;
-            font-size: 14px;
-            display: block;
+          font-weight: bold;
+          margin-top: 10px;
+          font-size: 14px;
+          display: block;
           }
           .inputFlex {
             display: flex;
@@ -54,17 +70,17 @@
               color: #777777;
             }
   
-              input {
-                background-color: #1B264F;
-                width: 100%;
-                padding: 8px;
-                padding-bottom: 4px;
-                padding-top: 13px;
-                font-size: 15px;
-                border: none;
-                border-bottom: 1px solid #ccc;
-                border-radius: 0px;
-                color: #ffffff;
+            input {
+              background-color: #1B264F;
+              width: 100%;
+              padding: 8px;
+              padding-bottom: 4px;
+              padding-top: 13px;
+              font-size: 15px;
+              border: none;
+              border-bottom: 1px solid #ccc;
+              border-radius: 0px;
+              color: #ffffff;
   
             }
             input:focus {
@@ -82,6 +98,7 @@
               width: 25%;
               text-align: right;
             }
+
           }
           .boxButton {
             width: 100%;
@@ -114,21 +131,33 @@
           padding: 5px 20px 20px;
           margin-bottom: 20px;
           border-radius: 10px;
-          .standard {
-            display: flex;
-            .boxes {
-              width: 50%;
-              .titleValor {
-                color: #1B264F;
-                font-size: 12px;
-                text-align: right;
-              }
-              .valueDestaq {
-                color: #1B264F;
-                text-align: right;
-                font-size: 24px;
-              }
+          p {
+            margin: 0px;
+            margin-bottom: 5px;
+            font-weight: 600;
+            font-size: 16px;
+            span {
+              font-weight: 800;
             }
+          }
+          .textTotalLiquido {
+            color: rgb(0, 0, 0);
+            font-size: 14px;
+            font-weight: 800;
+            width: 100%;
+            margin-bottom: 0px;
+            margin-top: 10px;
+
+          }
+          .textValorTotalLiquido {
+            color: rgb(255, 255, 255);
+            font-size: 20px;
+            padding: 6px 10px;
+            font-weight: 800;
+            background-color: rgb(241, 15, 15);
+            text-align: center;
+            border-radius: 5px;
+            width: 100%;
           }
         }
         .best {
@@ -144,3 +173,148 @@
     }
   
   }
+
+  @media (max-width:400px) {
+    
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #d5dfff;
+        margin: 0;
+        padding: 0px;
+        height: 100vh;
+        width: 100vw;
+        color: #fff;
+    
+        
+        .container {
+          display: flex;
+          height: auto;
+          width: 100vw;
+          flex-direction: column;
+    
+          .content {
+            max-width: 400px;
+            width: 100%;
+            background-color: #1B264F;
+            padding: 20px;
+            border-radius: 0px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: auto;
+            height: 93%;
+            h1 {
+              text-align: center;
+              margin: 0;
+              margin-bottom: 15px;
+              font-size: 20px;
+            }
+            label {
+              font-weight: bold;
+              margin-top: 10px;
+              font-size: 14px;
+              display: block;
+            }
+            .inputFlex {
+              display: flex;
+              margin-bottom: 20px;
+              #valueVencimento {
+                background-color: transparent;
+                border: none;
+                padding: 0px;
+                border: none;
+                color: #fff;
+              }
+              #valueVencimento:focus {
+                color: #777777;
+              }
+    
+              input {
+                  background-color: #1B264F;
+                  width: 100%;
+                  padding: 8px;
+                  padding-bottom: 4px;
+                  padding-top: 13px;
+                  font-size: 15px;
+                  border: none;
+                  border-bottom: 1px solid #ccc;
+                  border-radius: 0px;
+                  color: #ffffff;
+    
+              }
+              input:focus {
+                color: #ffffff;
+                box-shadow: 0 0 0 0;
+                border: 0 none;
+                outline: 0;
+                border: none;
+                border-bottom: 1px solid #ccc;
+              }
+              span {
+                padding: 14.50px 0 4px;
+                border-bottom: 1px solid #ccc;
+                height: fit-content;
+                width: 30%;
+                text-align: right;
+              }
+            }
+            .boxButton {
+              width: 100%;
+              button {
+                width: 100%;
+                padding: 10px;
+                background-color: #357DED;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                font-size: 16px;
+                font-weight: 600;
+              }
+              button:hover {
+                background-color: #205ab6;
+              }
+            }
+          }
+        }
+        .result {
+          padding: 10px;
+          border-radius: 4px;
+          margin-top: 15px;
+          
+          .card {
+            color: #1B264F;
+            background-color: #fff;
+            border: 5px solid #357DED;
+            padding: 5px 20px 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            .standard {
+              display: flex;
+              .boxes {
+                width: 50%;
+                .titleValor {
+                  color: #1B264F;
+                  font-size: 12px;
+                  text-align: right;
+                }
+                .valueDestaq {
+                  color: #1B264F;
+                  text-align: right;
+                  font-size: 24px;
+                }
+              }
+            }
+          }
+          .best {
+            color: #1B264F;
+            background-color: #357DED;
+            border: 5px solid #fff;
+            padding: 5px 20px 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            
+          }
+        }
+      }
+    
+    }
+  

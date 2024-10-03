@@ -33,6 +33,19 @@
   margin-bottom: 15px;
   font-size: 20px;
 }
+* body .container .content .containerInputDividido {
+  justify-content: space-between;
+  display: flex;
+}
+* body .container .content .contentInputMetade {
+  width: 45%;
+}
+* body .container .content .contentInputMetade .inputFlex input {
+  width: 50%;
+}
+* body .container .content .contentInputMetade .inputFlex span {
+  width: 50%;
+}
 * body .container .content label {
   font-weight: bold;
   margin-top: 10px;
@@ -111,21 +124,32 @@
   margin-bottom: 20px;
   border-radius: 10px;
 }
-* body .result .card .standard {
-  display: flex;
+* body .result .card p {
+  margin: 0px;
+  margin-bottom: 5px;
+  font-weight: 600;
+  font-size: 16px;
 }
-* body .result .card .standard .boxes {
-  width: 50%;
+* body .result .card p span {
+  font-weight: 800;
 }
-* body .result .card .standard .boxes .titleValor {
-  color: #1B264F;
-  font-size: 12px;
-  text-align: right;
+* body .result .card .textTotalLiquido {
+  color: rgb(0, 0, 0);
+  font-size: 14px;
+  font-weight: 800;
+  width: 100%;
+  margin-bottom: 0px;
+  margin-top: 10px;
 }
-* body .result .card .standard .boxes .valueDestaq {
-  color: #1B264F;
-  text-align: right;
-  font-size: 24px;
+* body .result .card .textValorTotalLiquido {
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  padding: 6px 10px;
+  font-weight: 800;
+  background-color: rgb(241, 15, 15);
+  text-align: center;
+  border-radius: 5px;
+  width: 100%;
 }
 * body .result .best {
   color: #1B264F;
@@ -134,4 +158,140 @@
   padding: 5px 20px 20px;
   margin-bottom: 20px;
   border-radius: 10px;
+}
+
+@media (max-width: 400px) {
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #d5dfff;
+    margin: 0;
+    padding: 0px;
+    height: 100vh;
+    width: 100vw;
+    color: #fff;
+  }
+  body .container {
+    display: flex;
+    height: auto;
+    width: 100vw;
+    flex-direction: column;
+  }
+  body .container .content {
+    max-width: 400px;
+    width: 100%;
+    background-color: #1B264F;
+    padding: 20px;
+    border-radius: 0px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: auto;
+    height: 93%;
+  }
+  body .container .content h1 {
+    text-align: center;
+    margin: 0;
+    margin-bottom: 15px;
+    font-size: 20px;
+  }
+  body .container .content label {
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 14px;
+    display: block;
+  }
+  body .container .content .inputFlex {
+    display: flex;
+    margin-bottom: 20px;
+  }
+  body .container .content .inputFlex #valueVencimento {
+    background-color: transparent;
+    border: none;
+    padding: 0px;
+    border: none;
+    color: #fff;
+  }
+  body .container .content .inputFlex #valueVencimento:focus {
+    color: #777777;
+  }
+  body .container .content .inputFlex input {
+    background-color: #1B264F;
+    width: 100%;
+    padding: 8px;
+    padding-bottom: 4px;
+    padding-top: 13px;
+    font-size: 15px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    border-radius: 0px;
+    color: #ffffff;
+  }
+  body .container .content .inputFlex input:focus {
+    color: #ffffff;
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+    border: none;
+    border-bottom: 1px solid #ccc;
+  }
+  body .container .content .inputFlex span {
+    padding: 14.5px 0 4px;
+    border-bottom: 1px solid #ccc;
+    height: -moz-fit-content;
+    height: fit-content;
+    width: 30%;
+    text-align: right;
+  }
+  body .container .content .boxButton {
+    width: 100%;
+  }
+  body .container .content .boxButton button {
+    width: 100%;
+    padding: 10px;
+    background-color: #357DED;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  body .container .content .boxButton button:hover {
+    background-color: #205ab6;
+  }
+  body .result {
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 15px;
+  }
+  body .result .card {
+    color: #1B264F;
+    background-color: #fff;
+    border: 5px solid #357DED;
+    padding: 5px 20px 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+  }
+  body .result .card .standard {
+    display: flex;
+  }
+  body .result .card .standard .boxes {
+    width: 50%;
+  }
+  body .result .card .standard .boxes .titleValor {
+    color: #1B264F;
+    font-size: 12px;
+    text-align: right;
+  }
+  body .result .card .standard .boxes .valueDestaq {
+    color: #1B264F;
+    text-align: right;
+    font-size: 24px;
+  }
+  body .result .best {
+    color: #1B264F;
+    background-color: #357DED;
+    border: 5px solid #fff;
+    padding: 5px 20px 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+  }
 }/*# sourceMappingURL=calcule.module.css.map */
