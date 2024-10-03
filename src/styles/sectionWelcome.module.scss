@@ -1,0 +1,100 @@
+.container {
+    background: url(../assets/banners/desktop/banner1-desk.png) 20% center no-repeat;
+    background-size: cover;
+    
+    width: 100%;
+    height: 620px;
+    background-color: red;
+    .containerOpacity {
+        padding: 20px 0;
+        padding-left: 100px;
+        background-color: rgba(3, 35, 83, 0.514);
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding-top: 150px;
+
+        h3 {
+            margin: 0;
+            margin-bottom: 25px;
+        }
+        h1 {
+            margin: 0;
+            width: 40%;
+            font-size: 45px;
+            line-height: 45px;
+            margin-bottom: 55px;
+        }
+        .boxButton {
+            width: 100%;
+            button {
+            box-shadow: 20px 20px 60px -15px rgba(0,0,0,0.75);
+            width: 250px;
+            padding: 10px;
+            background-color: #357DED;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: 700;
+            }
+            button:hover {
+                background-color: #205ab6;
+            }
+        }
+    }
+}
+
+@media (max-width:500px) {
+    .container {
+        background: url(../assets/banners/mobile/banner1-mob.png) 20% center no-repeat;
+        background-size: cover;
+        
+        width: 100%;
+        height: 350px;
+        background-color: red;
+        .containerOpacity {
+            padding: 20px 0;
+            padding-left: 50px;
+            background-color: rgba(3, 35, 83, 0.644);
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            padding-top: 50px;
+    
+            h3 {
+                margin: 0;
+                font-size: 18px;
+                margin-bottom: 25px;
+            }
+            h1 {
+                margin: 0;
+                width: 90%;
+                font-size: 30px;
+                line-height: 35px;
+                margin-bottom: 55px;
+            }
+            .boxButton {
+                width: 100%;
+                button {
+                box-shadow: 20px 20px 60px -15px rgba(0,0,0,0.75);
+                width: 220px;
+                padding: 10px;
+                background-color: #357DED;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                font-size: 16px;
+                font-weight: 700;
+                }
+                button:hover {
+                    background-color: #205ab6;
+                }
+            }
+        }
+    }
+}

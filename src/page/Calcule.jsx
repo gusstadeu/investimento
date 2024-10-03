@@ -96,7 +96,7 @@ function Calcule() {
   return (
     <div className={Styles.container}>
       <div className={Styles.content}>
-        <h1>INVESTIMENTO</h1>
+        <h1 id="simulador">INVESTIMENTO</h1>
         <label>Valor da Aplicação Inicial</label>
         <div className={Styles.boxInput}>
           <div className={Styles.inputFlex}>
@@ -199,9 +199,10 @@ function Calcule() {
         </div>
       </div>
 
-      <div className={Styles.content}>
+      <div style={{backgroundColor: '#1B264F', boxShadow: 'none'}} className={Styles.content}>
         <div className={Styles.result}>
           <div className={Styles.card}>
+            
             <h3>Poupança</h3>
             <p>Valor Total Investido: <span>{formatarNumero(valorAplicacao + investimentoMensal * (diasVencimento / 30))}</span></p>
             <p>Rendimento Bruto: <span>{rendimentoBrutoPoupanca}</span></p>

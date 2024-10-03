@@ -12,26 +12,32 @@
       height: 100vh;
       width: auto;
       color: #fff;
-  
+      display: flex;
+      flex-direction: column;
+      
       
       .container {
         display: flex;    
         height: 100%;
+        background-color: #1B264F;
+        width: 80%;
+        margin: 100px auto;
+        border-radius: 50px;
   
         .content {
-          max-width: 400px;
+          max-width: 500px;
           width: 100%;
-          background-color: #1B264F;
-          padding: 20px;
-          border-radius: 8px;
+          background-color: #162c7c;
+          padding: 30px;
+          border-radius: 30px;
           box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
           margin: auto;
-          height: 93%;
           h1 {
             text-align: center;
             margin: 0;
-            margin-bottom: 15px;
-            font-size: 20px;
+            margin-top: 20px;
+            margin-bottom: 40px;
+            font-size: 30px;
           }
           .containerInputDividido{
               justify-content: space-between;
@@ -70,7 +76,7 @@
             }
   
             input {
-              background-color: #1B264F;
+              background-color: #162c7c;
               width: 100%;
               padding: 8px;
               padding-bottom: 4px;
@@ -101,6 +107,7 @@
           }
           .boxButton {
             width: 100%;
+            margin: 20px auto;
             button {
               box-shadow: 20px 20px 60px -15px rgba(0,0,0,0.75);
               width: 100%;
@@ -191,20 +198,25 @@
           height: auto;
           width: 100vw;
           flex-direction: column;
+          background-color: #1B264F;
+          margin: 20px auto;
+          border-radius: 50px;
     
-          .content {
-            max-width: 400px;
-            width: 100%;
-            background-color: #1B264F;
-            padding: 20px;
-            border-radius: 0px;
-            box-shadow: none;
-            margin: auto;
-            height: 93%;
+  
+            .content {
+              max-width: 500px;
+              width: 100%;
+              background-color: #1B264F;
+              padding: 30px;
+              border-radius: 0px;
+              box-shadow: none;
+              margin: auto;
             h1 {
               text-align: center;
-              margin: 15px 0 30px;
-              font-size: 20px;
+              margin: 0;
+              margin-top: 20px;
+              margin-bottom: 40px;
+              font-size: 30px;
             }
             label {
               font-weight: bold;
