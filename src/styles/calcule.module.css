@@ -141,11 +141,17 @@
 * body .result .card .cardHeader button {
   border-radius: 20px;
   background-color: #fff;
-  border: none;
+  border-color: #fff;
+  box-shadow: none;
+  padding: 0;
 }
 * body .result .card .cardHeader button h3 {
   font-size: 20px;
   margin: 0;
+  font-weight: 800;
+}
+* body .result .card .cardBody {
+  padding: 30px 0 10px;
 }
 * body .result .card .sectionValueLiquid {
   margin: 0px 20px;
@@ -204,6 +210,8 @@
     background-color: #1B264F;
     margin: 20px auto;
     border-radius: 50px;
+    margin-top: 0;
+    padding-top: 10px;
   }
   body .container .content {
     max-width: 500px;
@@ -296,14 +304,15 @@
     color: #1B264F;
     background-color: #fff;
     border: 5px solid #357DED;
-    padding: 0px;
     margin-bottom: 20px;
     border-radius: 20px;
+    padding: 20px;
   }
   body .result .card .cardHeader button {
     border-radius: 20px;
     background-color: none;
     border: none;
+    padding: 0;
   }
   body .result .card .cardHeader button h3 {
     font-size: 20px;

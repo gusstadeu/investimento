@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import Styles from '../styles/calcule.module.css';
 import Accordion from 'react-bootstrap/Accordion';
+import AnchorLink from 'react-anchor-link-smooth-scroll'
+
 
 function Calcule() {
   const [valorAplicacao, setValorAplicacao] = useState(1000);
@@ -195,19 +197,19 @@ function Calcule() {
           </div>
         </div>
 
-        <div className={Styles.boxButton}>
+        <AnchorLink className={Styles.boxButton} offset={100} href="#resultado">
           <button onClick={calcular}>Simulação</button>
-        </div>
+        </AnchorLink>
       </div>
 
       <div style={{backgroundColor: '#1B264F', boxShadow: 'none'}} className={Styles.content}>
         <div className={Styles.result}>
           <Accordion defaultActiveKey="0">
-            <Accordion.Item eventKey="0" className={Styles.card}>
+            <Accordion.Item eventKey="0" id='resultado' className={Styles.card}>
               <Accordion.Header className={Styles.cardHeader}>
                 <h3>Poupança</h3>
               </Accordion.Header>
-              <Accordion.Body>
+              <Accordion.Body className={Styles.cardBody}>
                 <p>Valor Total Investido: <span>{formatarNumero(valorAplicacao + investimentoMensal * (diasVencimento / 30))}</span></p>
                 <p>Rendimento Bruto: <span>{rendimentoBrutoPoupanca}</span></p>
               </Accordion.Body>
@@ -220,7 +222,7 @@ function Calcule() {
               <Accordion.Header className={Styles.cardHeader}>
                 <h3>CDB/RDB/LC</h3>
               </Accordion.Header>
-              <Accordion.Body>
+              <Accordion.Body className={Styles.cardBody}>
                   <p>Valor Total Investido: <span>{formatarNumero(valorAplicacao + investimentoMensal * (diasVencimento / 30))}</span></p>
                   <p>Rendimento Bruto: <span>{rendimentoBrutoCdb}</span></p>
                   <p style={{color:'red'}}>Imposto de Renda: <span>{impostoCdb}</span></p>
@@ -234,7 +236,7 @@ function Calcule() {
               <Accordion.Header className={Styles.cardHeader}>
                 <h3>LCI/LCA</h3>
               </Accordion.Header>
-              <Accordion.Body>
+              <Accordion.Body className={Styles.cardBody}>
                   <p>Valor Total Investido: <span>{formatarNumero(valorAplicacao + investimentoMensal * (diasVencimento / 30))}</span></p>
                   <p>Rendimento Bruto: <span>{rendimentoBrutoLci}</span></p>
               </Accordion.Body>
