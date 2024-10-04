@@ -23,6 +23,7 @@
         width: 80%;
         margin: 100px auto;
         border-radius: 50px;
+        padding: 50px 0;
   
         .content {
           max-width: 500px;
@@ -32,6 +33,7 @@
           border-radius: 30px;
           box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
           margin: auto;
+          color: #fff;
           h1 {
             text-align: center;
             margin: 0;
@@ -136,9 +138,28 @@
           color: #1B264F;
           background-color: #fff;
           border: 5px solid #357DED;
-          padding: 5px 20px 20px;
           margin-bottom: 20px;
-          border-radius: 10px;
+          border-radius: 20px;
+          padding: 20px;
+          
+          .cardHeader {
+            border: none;
+            padding: 0;
+            button {
+              border-radius: 20px;
+              background-color: #fff;
+              border: none;
+
+              h3 {
+                font-size: 20px;
+                margin: 0;
+              }
+            }
+          }
+          .sectionValueLiquid {
+            margin: 0px 20px ;
+            background-color: rgb(219, 9, 219);
+          }
           p {
             margin: 0px;
             margin-bottom: 5px;
@@ -292,27 +313,50 @@
           margin-top: 15px;
           
           .card {
+            box-shadow: 10px 15px 36px -4px rgba(0,0,0,0.75);
             color: #1B264F;
             background-color: #fff;
             border: 5px solid #357DED;
-            padding: 5px 20px 20px;
+            padding: 0px;
             margin-bottom: 20px;
-            border-radius: 10px;
-            .standard {
-              display: flex;
-              .boxes {
-                width: 50%;
-                .titleValor {
-                  color: #1B264F;
-                  font-size: 12px;
-                  text-align: right;
-                }
-                .valueDestaq {
-                  color: #1B264F;
-                  text-align: right;
-                  font-size: 24px;
+            border-radius: 20px;
+            .cardHeader {
+              button {
+                border-radius: 20px;
+                background-color: none;
+                border: none;
+                h3 {
+                  font-size: 20px;
+                  margin: 0;
                 }
               }
+            }
+            p {
+              margin: 0px;
+              margin-bottom: 5px;
+              font-weight: 600;
+              font-size: 16px;
+              span {
+                font-weight: 800;
+              }
+            }
+            .textTotalLiquido {
+              color: rgb(0, 0, 0);
+              font-size: 14px;
+              font-weight: 800;
+              width: 100%;
+              margin-bottom: 0px;
+              margin-top: 10px;
+  
+            }
+            .textValorTotalLiquido {
+              color: rgb(255, 255, 255);
+              font-size: 20px;
+              padding: 6px 10px;
+              font-weight: 800;
+              text-align: center;
+              border-radius: 5px;
+              width: 100%;
             }
           }
           .best {

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Styles from '../styles/calcule.module.css';
+import Accordion from 'react-bootstrap/Accordion';
 
 function Calcule() {
   const [valorAplicacao, setValorAplicacao] = useState(1000);
@@ -201,31 +202,48 @@ function Calcule() {
 
       <div style={{backgroundColor: '#1B264F', boxShadow: 'none'}} className={Styles.content}>
         <div className={Styles.result}>
-          <div className={Styles.card}>
-            
-            <h3>Poupança</h3>
-            <p>Valor Total Investido: <span>{formatarNumero(valorAplicacao + investimentoMensal * (diasVencimento / 30))}</span></p>
-            <p>Rendimento Bruto: <span>{rendimentoBrutoPoupanca}</span></p>
-            <p className={Styles.textTotalLiquido}>Total Líquido:</p>
-            <p style={{backgroundColor: 'rgb(241, 15, 15)'}} className={Styles.textValorTotalLiquido}>{rendimentoPoupanca}</p>
-          </div>
-
-          <div className={Styles.card}>
-            <h3>CDB/RDB/LC</h3>
-            <p>Valor Total Investido: <span>{formatarNumero(valorAplicacao + investimentoMensal * (diasVencimento / 30))}</span></p>
-            <p>Rendimento Bruto: <span>{rendimentoBrutoCdb}</span></p>
-            <p style={{color:'red'}}>Imposto de Renda: <span>{impostoCdb}</span></p>
-            <p className={Styles.textTotalLiquido}>Total Líquido:</p>
-            <p style={{backgroundColor: 'rgb(243, 142, 26)'}} className={Styles.textValorTotalLiquido}>{rendimentoLiquidoCdb}</p>
-          </div>
-
-          <div className={Styles.card}>
-            <h3>LCI/LCA</h3>
-            <p>Valor Total Investido: <span>{formatarNumero(valorAplicacao + investimentoMensal * (diasVencimento / 30))}</span></p>
-            <p>Rendimento Bruto: <span>{rendimentoBrutoLci}</span></p>
-            <p className={Styles.textTotalLiquido}>Total Líquido:</p>
-            <p style={{backgroundColor: 'rgb(7, 168, 7)'}} className={Styles.textValorTotalLiquido}>{rendimentoLci}</p>
-          </div>
+          <Accordion defaultActiveKey="0">
+            <Accordion.Item eventKey="0" className={Styles.card}>
+              <Accordion.Header className={Styles.cardHeader}>
+                <h3>Poupança</h3>
+              </Accordion.Header>
+              <Accordion.Body>
+                <p>Valor Total Investido: <span>{formatarNumero(valorAplicacao + investimentoMensal * (diasVencimento / 30))}</span></p>
+                <p>Rendimento Bruto: <span>{rendimentoBrutoPoupanca}</span></p>
+              </Accordion.Body>
+              <div lassName={Styles.sectionValueLiquid}>
+                <p className={Styles.textTotalLiquido}>Total Líquido:</p>
+                <p style={{backgroundColor: 'rgb(241, 15, 15)'}} className={Styles.textValorTotalLiquido}>{rendimentoPoupanca}</p>
+              </div>
+            </Accordion.Item>
+            <Accordion.Item eventKey="1" className={Styles.card}>
+              <Accordion.Header className={Styles.cardHeader}>
+                <h3>CDB/RDB/LC</h3>
+              </Accordion.Header>
+              <Accordion.Body>
+                  <p>Valor Total Investido: <span>{formatarNumero(valorAplicacao + investimentoMensal * (diasVencimento / 30))}</span></p>
+                  <p>Rendimento Bruto: <span>{rendimentoBrutoCdb}</span></p>
+                  <p style={{color:'red'}}>Imposto de Renda: <span>{impostoCdb}</span></p>
+              </Accordion.Body>
+              <div lassName={Styles.sectionValueLiquid}>
+                <p className={Styles.textTotalLiquido}>Total Líquido:</p>
+                <p style={{backgroundColor: 'rgb(243, 142, 26)'}} className={Styles.textValorTotalLiquido}>{rendimentoLiquidoCdb}</p>
+              </div>
+            </Accordion.Item>
+            <Accordion.Item eventKey="2" className={Styles.card}>
+              <Accordion.Header className={Styles.cardHeader}>
+                <h3>LCI/LCA</h3>
+              </Accordion.Header>
+              <Accordion.Body>
+                  <p>Valor Total Investido: <span>{formatarNumero(valorAplicacao + investimentoMensal * (diasVencimento / 30))}</span></p>
+                  <p>Rendimento Bruto: <span>{rendimentoBrutoLci}</span></p>
+              </Accordion.Body>
+              <div lassName={Styles.sectionValueLiquid}>
+                <p className={Styles.textTotalLiquido}>Total Líquido:</p>
+                <p style={{backgroundColor: 'rgb(7, 168, 7)'}} className={Styles.textValorTotalLiquido}>{rendimentoLci}</p>
+              </div>
+            </Accordion.Item>
+          </Accordion>
         </div>
       </div>
     </div>

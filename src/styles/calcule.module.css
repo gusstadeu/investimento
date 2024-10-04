@@ -21,6 +21,7 @@
   width: 80%;
   margin: 100px auto;
   border-radius: 50px;
+  padding: 50px 0;
 }
 * body .container .content {
   max-width: 500px;
@@ -30,6 +31,7 @@
   border-radius: 30px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   margin: auto;
+  color: #fff;
 }
 * body .container .content h1 {
   text-align: center;
@@ -128,9 +130,26 @@
   color: #1B264F;
   background-color: #fff;
   border: 5px solid #357DED;
-  padding: 5px 20px 20px;
   margin-bottom: 20px;
-  border-radius: 10px;
+  border-radius: 20px;
+  padding: 20px;
+}
+* body .result .card .cardHeader {
+  border: none;
+  padding: 0;
+}
+* body .result .card .cardHeader button {
+  border-radius: 20px;
+  background-color: #fff;
+  border: none;
+}
+* body .result .card .cardHeader button h3 {
+  font-size: 20px;
+  margin: 0;
+}
+* body .result .card .sectionValueLiquid {
+  margin: 0px 20px;
+  background-color: rgb(219, 9, 219);
 }
 * body .result .card p {
   margin: 0px;
@@ -273,28 +292,48 @@
     margin-top: 15px;
   }
   body .result .card {
+    box-shadow: 10px 15px 36px -4px rgba(0, 0, 0, 0.75);
     color: #1B264F;
     background-color: #fff;
     border: 5px solid #357DED;
-    padding: 5px 20px 20px;
+    padding: 0px;
     margin-bottom: 20px;
-    border-radius: 10px;
+    border-radius: 20px;
   }
-  body .result .card .standard {
-    display: flex;
+  body .result .card .cardHeader button {
+    border-radius: 20px;
+    background-color: none;
+    border: none;
   }
-  body .result .card .standard .boxes {
-    width: 50%;
+  body .result .card .cardHeader button h3 {
+    font-size: 20px;
+    margin: 0;
   }
-  body .result .card .standard .boxes .titleValor {
-    color: #1B264F;
-    font-size: 12px;
-    text-align: right;
+  body .result .card p {
+    margin: 0px;
+    margin-bottom: 5px;
+    font-weight: 600;
+    font-size: 16px;
   }
-  body .result .card .standard .boxes .valueDestaq {
-    color: #1B264F;
-    text-align: right;
-    font-size: 24px;
+  body .result .card p span {
+    font-weight: 800;
+  }
+  body .result .card .textTotalLiquido {
+    color: rgb(0, 0, 0);
+    font-size: 14px;
+    font-weight: 800;
+    width: 100%;
+    margin-bottom: 0px;
+    margin-top: 10px;
+  }
+  body .result .card .textValorTotalLiquido {
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    padding: 6px 10px;
+    font-weight: 800;
+    text-align: center;
+    border-radius: 5px;
+    width: 100%;
   }
   body .result .best {
     color: #1B264F;
