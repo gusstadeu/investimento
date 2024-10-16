@@ -56,16 +56,16 @@
   .containerButton {
     background-color: #32d951;
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 30px;
+    right: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 80px;
-    animation: whatsAnima 2s ease 0s 1 normal forwards;
     text-decoration: none;
     width: 60px; /* Define uma largura inicial fixa */
     padding-right: 10px;
+    animation: none;
     transition: width 2s ease, padding-left 2s ease; /* Transição suave usando 'width' */
     overflow: hidden; /* Impede o texto de vazar durante a transição */
   }
@@ -107,7 +107,7 @@
 @keyframes whatsAnima {
   0% {
     opacity: 0;
-    transform: translateY(250px);
+    transform: translateY(100px);
   }
   100% {
     opacity: 1;

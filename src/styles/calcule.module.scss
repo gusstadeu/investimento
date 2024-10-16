@@ -371,7 +371,24 @@
                   border-bottom: 1px solid #ccc;
                   border-radius: 0px;
                   color: #ffffff;
-    
+                }
+              select {
+                background-color: transparent;
+                color: #fff;
+                border: none;
+                border-bottom: 1px solid #ccc;
+                option {
+                  color: #fff;
+                  background-color: #1B264F;
+                  border: none;
+                  outline: none;
+                  border-radius: none;
+                }
+                &:focus {
+                  border: none;
+                  box-shadow: none;
+                }
+
               }
               input:focus {
                 color: #ffffff;

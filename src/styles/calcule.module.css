@@ -339,6 +339,23 @@
     border-radius: 0px;
     color: #ffffff;
   }
+  body .container .content .inputFlex select {
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    border-bottom: 1px solid #ccc;
+  }
+  body .container .content .inputFlex select option {
+    color: #fff;
+    background-color: #1B264F;
+    border: none;
+    outline: none;
+    border-radius: none;
+  }
+  body .container .content .inputFlex select:focus {
+    border: none;
+    box-shadow: none;
+  }
   body .container .content .inputFlex input:focus {
     color: #ffffff;
     box-shadow: 0 0 0 0;
