@@ -120,52 +120,66 @@
 * body .container .content .boxButton button:hover {
   background-color: #205ab6;
 }
-* body .result {
+* body .content .result {
   padding: 10px;
   border-radius: 4px;
   margin-top: 15px;
 }
-* body .result .card {
+* body .content .result .card {
   box-shadow: 10px 15px 36px -4px rgba(0, 0, 0, 0.75);
+  opacity: 0;
   color: #1B264F;
   background-color: #fff;
   border: 5px solid #357DED;
   margin-bottom: 20px;
   border-radius: 20px;
   padding: 20px;
+  animation: boxAnimation 2s ease forwards;
+  transform: translateX(250px);
+  transition: opacity 2s ease, transform 2s ease;
+  /* Para cada card, adicione um delay crescente */
 }
-* body .result .card .cardHeader {
+* body .content .result .card:nth-child(1) {
+  animation-delay: 0s;
+}
+* body .content .result .card:nth-child(2) {
+  animation-delay: 0.3s;
+}
+* body .content .result .card:nth-child(3) {
+  animation-delay: 0.6s;
+}
+* body .content .result .card .cardHeader {
   border: none;
   padding: 0;
 }
-* body .result .card .cardHeader button {
+* body .content .result .card .cardHeader button {
   border-radius: 20px;
   background-color: #fff;
   border-color: #fff;
   box-shadow: none;
   padding: 0;
 }
-* body .result .card .cardHeader button h3 {
+* body .content .result .card .cardHeader button h3 {
   font-size: 20px;
   margin: 0;
   font-weight: 800;
 }
-* body .result .card .cardBody {
+* body .content .result .card .cardBody {
   padding: 30px 0 10px;
 }
-* body .result .card .sectionValueLiquid {
+* body .content .result .card .sectionValueLiquid {
   margin: 0px 20px;
 }
-* body .result .card p {
+* body .content .result .card p {
   margin: 0px;
   margin-bottom: 5px;
   font-weight: 600;
   font-size: 16px;
 }
-* body .result .card p span {
+* body .content .result .card p span {
   font-weight: 800;
 }
-* body .result .card .textTotalLiquido {
+* body .content .result .card .textTotalLiquido {
   color: rgb(0, 0, 0);
   font-size: 14px;
   font-weight: 800;
@@ -173,7 +187,7 @@
   margin-bottom: 0px;
   margin-top: 10px;
 }
-* body .result .card .textValorTotalLiquido {
+* body .content .result .card .textValorTotalLiquido {
   color: rgb(255, 255, 255);
   font-size: 20px;
   padding: 6px 10px;
@@ -182,7 +196,11 @@
   border-radius: 5px;
   width: 100%;
 }
-* body .result .best {
+* body .content .result .card.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+* body .content .result .best {
   color: #1B264F;
   background-color: #357DED;
   border: 5px solid #fff;
@@ -190,7 +208,67 @@
   margin-bottom: 20px;
   border-radius: 10px;
 }
+* body .contentContato {
+  width: 80%;
+  margin: 0 auto;
+}
+* body .contentContato h1 {
+  width: 100%;
+  margin: 0;
+  margin-bottom: 20px;
+  font-size: 40px;
+  font-weight: 700;
+  text-align: left;
+}
+* body .contentContato .containerButtonWPP {
+  margin-top: 30px;
+  margin-bottom: 100px;
+  background-color: #32d951;
+  border-radius: 10px;
+  width: 300px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+* body .contentContato .containerButtonWPP .opacity {
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+}
+* body .contentContato .containerButtonWPP a {
+  width: 100%;
+  height: 100%;
+  padding-left: 5px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+}
+* body .contentContato .containerButtonWPP a .bgImageLogoWPP {
+  background: url(../assets/whatsapp.png);
+  background-size: cover;
+  padding-bottom: 2px;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+}
+* body .contentContato .containerButtonWPP a p {
+  margin: 0;
+  font-weight: 700;
+  padding-left: 15px;
+}
 
+@keyframes boxAnimation {
+  0% {
+    opacity: 0;
+    transform: translateX(250px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 @media (max-width: 500px) {
   body {
     font-family: Arial, sans-serif;
@@ -211,6 +289,7 @@
     border-radius: 50px;
     margin-top: 0;
     padding-top: 10px;
+    padding-bottom: 0;
   }
   body .container .content {
     max-width: 500px;
@@ -350,5 +429,39 @@
     padding: 5px 20px 20px;
     margin-bottom: 20px;
     border-radius: 10px;
+  }
+  body .contentContato {
+    width: 80%;
+    margin: 0 auto;
+  }
+  body .contentContato h1 {
+    width: 100%;
+    margin: 0;
+    margin-bottom: 20px;
+    font-size: 30px;
+    font-weight: 700;
+    text-align: left;
+  }
+  body .contentContato .containerButtonWPP {
+    margin-top: 30px;
+    margin-bottom: 100px;
+    background-color: #32d951;
+    border-radius: 10px;
+  }
+  body .contentContato .containerButtonWPP a {
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+  }
+  body .contentContato .containerButtonWPP a img {
+    border-radius: 10px;
+    width: 50px;
+  }
+  body .contentContato .containerButtonWPP a p {
+    margin: 0;
+    font-weight: 700;
+    padding-left: 15px;
   }
 }/*# sourceMappingURL=calcule.module.css.map */

@@ -1,0 +1,116 @@
+@charset "UTF-8";
+.containerButton {
+  background-color: #32d951;
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 80px;
+  animation: whatsAnima 2s ease 0s 1 normal forwards;
+  text-decoration: none;
+  width: 80px; /* Define uma largura inicial fixa */
+  padding-right: 10px;
+  transition: width 2s ease, padding-left 2s ease; /* Transição suave usando 'width' */
+  overflow: hidden; /* Impede o texto de vazar durante a transição */
+}
+.containerButton .standardLogo {
+  border-radius: 50%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.containerButton .standardLogo img {
+  text-align: left;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+}
+.containerButton .standardLogo .standardText {
+  display: none;
+  color: white;
+  text-decoration: none;
+  margin: 0;
+  font-size: 18px;
+  font-weight: 900;
+  white-space: nowrap; /* Impede o texto de quebrar em várias linhas */
+  padding-right: 10px;
+}
+
+.containerButton:hover {
+  width: 360px; /* Aumenta suavemente a largura até 360px */
+  padding-left: 10px;
+}
+.containerButton:hover .standardText {
+  display: block;
+  opacity: 0; /* Texto invisível no início */
+  transition: opacity 0.5s ease 1.5s; /* Texto aparece após um pequeno atraso */
+}
+
+.containerButton:hover .standardText {
+  opacity: 1; /* Faz o texto aparecer gradualmente */
+}
+
+@media (max-width: 500px) {
+  .containerButton {
+    background-color: #32d951;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 80px;
+    animation: whatsAnima 2s ease 0s 1 normal forwards;
+    text-decoration: none;
+    width: 60px; /* Define uma largura inicial fixa */
+    padding-right: 10px;
+    transition: width 2s ease, padding-left 2s ease; /* Transição suave usando 'width' */
+    overflow: hidden; /* Impede o texto de vazar durante a transição */
+  }
+  .containerButton .standardLogo {
+    border-radius: 50%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+  .containerButton .standardLogo img {
+    text-align: left;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+  }
+  .containerButton .standardLogo .standardText {
+    display: none;
+    color: white;
+    text-decoration: none;
+    margin: 0;
+    font-size: 15px;
+    font-weight: 900;
+    white-space: nowrap; /* Impede o texto de quebrar em várias linhas */
+    padding-right: 10px;
+  }
+  .containerButton:hover {
+    width: 300px; /* Aumenta suavemente a largura até 360px */
+    padding-left: 10px;
+  }
+  .containerButton:hover .standardText {
+    display: block;
+    opacity: 0; /* Texto invisível no início */
+    transition: opacity 0.5s ease 1.5s; /* Texto aparece após um pequeno atraso */
+  }
+  .containerButton:hover .standardText {
+    opacity: 1; /* Faz o texto aparecer gradualmente */
+  }
+}
+@keyframes whatsAnima {
+  0% {
+    opacity: 0;
+    transform: translateY(250px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}/*# sourceMappingURL=whatsappButton.module.css.map */

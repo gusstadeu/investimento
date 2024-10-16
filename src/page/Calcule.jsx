@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Styles from '../styles/calcule.module.css';
 import Accordion from 'react-bootstrap/Accordion';
 import AnchorLink from 'react-anchor-link-smooth-scroll'
+import LogoWPP from '../assets/whatsapp.png' 
+
 
 
 function Calcule() {
+
   const [valorAplicacao, setValorAplicacao] = useState(1000);
   const [investimentoMensal, setInvestimentoMensal] = useState(0); // Novo estado para investimento mensal
   const [vencimento, setVencimento] = useState(360);
@@ -26,6 +29,29 @@ function Calcule() {
   const [rendimentoBrutoLci, setRendimentoBrutoLci] = useState(0);
 
   let [diasVencimento, setDiasVencimento] = useState(vencimento);
+
+  useEffect(() => {
+    const cards = document.querySelectorAll('.card');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        } else {
+          entry.target.classList.remove('visible');
+        }
+      });
+    });
+
+    cards.forEach((card) => {
+      observer.observe(card);
+    });
+
+    // Cleanup da observação ao desmontar o componente
+    return () => {
+      cards.forEach((card) => observer.unobserve(card));
+    };
+  }, []); // O array vazio garante que esse efeito execute apenas uma vez
 
 
   const formatarNumero = (valor) => {
@@ -97,155 +123,170 @@ function Calcule() {
   };
 
   return (
-    <div className={Styles.container}>
-      <div className={Styles.content}>
-        <h1 id="simulador">INVESTIMENTO</h1>
-        <label>Valor da Aplicação Inicial</label>
-        <div className={Styles.boxInput}>
-          <div className={Styles.inputFlex}>
-            <input
-              type="text"
-              value={formatarNumero(valorAplicacao)}
-              onChange={e => formatarValorInput(e.target.value, setValorAplicacao)}
-              placeholder="1000"
-            />
-          </div>
+    <div className={Styles.container} style={{display:'block'}}>
+      <div className={Styles.container} style={{marginBottom: '0px', marginTop: '0px'}}>
 
-          {/* Novo campo para investimento mensal */}
-          <label>Investimento Mensal</label>
-          <div className={Styles.inputFlex}>
-            <input
-              type="text"
-              value={formatarNumero(investimentoMensal)}
-              onChange={e => formatarValorInput(e.target.value, setInvestimentoMensal)}
-              placeholder="200"
-            />
-          </div>
+        <div className={Styles.content}>
+          <h1 id="simulador">INVESTIMENTO</h1>
+          <label>Valor da Aplicação Inicial</label>
+          <div className={Styles.boxInput}>
+            <div className={Styles.inputFlex}>
+              <input
+                type="text"
+                value={formatarNumero(valorAplicacao)}
+                onChange={e => formatarValorInput(e.target.value, setValorAplicacao)}
+                placeholder="1000"
+              />
+            </div>
 
-          <label>Vencimento</label>
-          <div className={Styles.inputFlex}>
-            <input
-              type="number"
-              value={vencimento}
-              onChange={e => setVencimento(parseInt(e.target.value))}
-              placeholder="360"
-            />
-            <select value={tempo} onChange={e => setTempo(e.target.value)}>
-              <option value="dia">Dias</option>
-              <option value="mes">Meses</option>
-              <option value="ano">Anos</option>
-            </select>
-          </div>
+            {/* Novo campo para investimento mensal */}
+            <label>Investimento Mensal</label>
+            <div className={Styles.inputFlex}>
+              <input
+                type="text"
+                value={formatarNumero(investimentoMensal)}
+                onChange={e => formatarValorInput(e.target.value, setInvestimentoMensal)}
+                placeholder="200"
+              />
+            </div>
 
-          {/* Outros campos */}
-          <div className={Styles.containerInputDividido}>
-            <div className={Styles.contentInputMetade}>
-              <label>Taxa DI</label>
-              <div className={Styles.inputFlex}>
-                <input
-                  type="number"
-                  value={taxaDi}
-                  onChange={e => setTaxaDi(parseFloat(e.target.value))}
-                  placeholder="10,65"
-                  step="0.01"
+            <label>Vencimento</label>
+            <div className={Styles.inputFlex}>
+              <input
+                type="number"
+                value={vencimento}
+                onChange={e => setVencimento(parseInt(e.target.value))}
+                placeholder="360"
+              />
+              <select value={tempo} onChange={e => setTempo(e.target.value)}>
+                <option value="dia">Dias</option>
+                <option value="mes">Meses</option>
+                <option value="ano">Anos</option>
+              </select>
+            </div>
+
+            {/* Outros campos */}
+            <div className={Styles.containerInputDividido}>
+              <div className={Styles.contentInputMetade}>
+                <label>Taxa DI</label>
+                <div className={Styles.inputFlex}>
+                  <input
+                    type="number"
+                    value={taxaDi}
+                    onChange={e => setTaxaDi(parseFloat(e.target.value))}
+                    placeholder="10,65"
+                    step="0.01"
+                    />
+                  <span>% ao ano</span>
+                </div>
+              </div>
+              <div className={Styles.contentInputMetade}>
+                <label>Taxa Selic</label>
+                <div className={Styles.inputFlex}>
+                  <input
+                    type="number"
+                    value={taxaSelic}
+                    onChange={e => setTaxaSelic(parseFloat(e.target.value))}
+                    placeholder="10,75"
+                    step="0.01"
                   />
-                <span>% ao ano</span>
+                  <span>% ao ano</span>
+                </div>
               </div>
             </div>
-            <div className={Styles.contentInputMetade}>
-              <label>Taxa Selic</label>
-              <div className={Styles.inputFlex}>
-                <input
-                  type="number"
-                  value={taxaSelic}
-                  onChange={e => setTaxaSelic(parseFloat(e.target.value))}
-                  placeholder="10,75"
-                  step="0.01"
-                />
-                <span>% ao ano</span>
+
+            <div className={Styles.containerInputDividido}>
+              <div className={Styles.contentInputMetade}>
+                <label>CDB/RDB/LC</label>
+                <div className={Styles.inputFlex}>
+                  <input
+                    type="number"
+                    value={percentualCdb}
+                    onChange={e => setPercentualCdb(parseFloat(e.target.value))}
+                    placeholder="100"
+                    step="1"
+                  />
+                  <span>% DI</span>
+                </div>
+              </div>
+              <div className={Styles.contentInputMetade}>
+                <label>LCI/LCA</label>
+                <div className={Styles.inputFlex}>
+                  <input
+                    type="number"
+                    value={percentualLci}
+                    onChange={e => setPercentualLci(parseFloat(e.target.value))}
+                    placeholder="100"
+                    step="1"
+                  />
+                  <span>% DI</span>
+                </div>
               </div>
             </div>
           </div>
 
-          <div className={Styles.containerInputDividido}>
-            <div className={Styles.contentInputMetade}>
-              <label>CDB/RDB/LC</label>
-              <div className={Styles.inputFlex}>
-                <input
-                  type="number"
-                  value={percentualCdb}
-                  onChange={e => setPercentualCdb(parseFloat(e.target.value))}
-                  placeholder="100"
-                  step="1"
-                />
-                <span>% DI</span>
-              </div>
-            </div>
-            <div className={Styles.contentInputMetade}>
-              <label>LCI/LCA</label>
-              <div className={Styles.inputFlex}>
-                <input
-                  type="number"
-                  value={percentualLci}
-                  onChange={e => setPercentualLci(parseFloat(e.target.value))}
-                  placeholder="100"
-                  step="1"
-                />
-                <span>% DI</span>
-              </div>
-            </div>
+          <AnchorLink className={Styles.boxButton} offset={100} href="#resultado">
+            <button onClick={calcular}>Simulação</button>
+          </AnchorLink>
+        </div>
+        <div style={{backgroundColor: '#1B264F', boxShadow: 'none'}} className={Styles.content}>
+          <div className={Styles.result}>
+            <Accordion defaultActiveKey="0">
+              <Accordion.Item eventKey="0" id='resultado' className={Styles.card}>
+                <Accordion.Header className={Styles.cardHeader}>
+                  <h3>Poupança</h3>
+                </Accordion.Header>
+                <Accordion.Body className={Styles.cardBody}>
+                  <p>Valor Total Investido: <span>{formatarNumero(valorAplicacao + investimentoMensal * (diasVencimento / 30))}</span></p>
+                  <p>Rendimento Bruto: <span>{rendimentoBrutoPoupanca}</span></p>
+                </Accordion.Body>
+                <div lassName={Styles.sectionValueLiquid}>
+                  <p className={Styles.textTotalLiquido}>Total Líquido:</p>
+                  <p style={{backgroundColor: 'rgb(241, 15, 15)'}} className={Styles.textValorTotalLiquido}>{rendimentoPoupanca}</p>
+                </div>
+              </Accordion.Item>
+              <Accordion.Item eventKey="1" className={Styles.card}>
+                <Accordion.Header className={Styles.cardHeader}>
+                  <h3>CDB/RDB/LC</h3>
+                </Accordion.Header>
+                <Accordion.Body className={Styles.cardBody}>
+                    <p>Valor Total Investido: <span>{formatarNumero(valorAplicacao + investimentoMensal * (diasVencimento / 30))}</span></p>
+                    <p>Rendimento Bruto: <span>{rendimentoBrutoCdb}</span></p>
+                    <p style={{color:'red'}}>Imposto de Renda: <span>{impostoCdb}</span></p>
+                </Accordion.Body>
+                <div lassName={Styles.sectionValueLiquid}>
+                  <p className={Styles.textTotalLiquido}>Total Líquido:</p>
+                  <p style={{backgroundColor: 'rgb(243, 142, 26)'}} className={Styles.textValorTotalLiquido}>{rendimentoLiquidoCdb}</p>
+                </div>
+              </Accordion.Item>
+              <Accordion.Item eventKey="2" className={Styles.card}>
+                <Accordion.Header className={Styles.cardHeader}>
+                  <h3>LCI/LCA</h3>
+                </Accordion.Header>
+                <Accordion.Body className={Styles.cardBody}>
+                    <p>Valor Total Investido: <span>{formatarNumero(valorAplicacao + investimentoMensal * (diasVencimento / 30))}</span></p>
+                    <p>Rendimento Bruto: <span>{rendimentoBrutoLci}</span></p>
+                </Accordion.Body>
+                <div lassName={Styles.sectionValueLiquid}>
+                  <p className={Styles.textTotalLiquido}>Total Líquido:</p>
+                  <p style={{backgroundColor: 'rgb(7, 168, 7)'}} className={Styles.textValorTotalLiquido}>{rendimentoLci}</p>
+                </div>
+              </Accordion.Item>
+            </Accordion>
           </div>
         </div>
-
-        <AnchorLink className={Styles.boxButton} offset={100} href="#resultado">
-          <button onClick={calcular}>Simulação</button>
-        </AnchorLink>
       </div>
 
-      <div style={{backgroundColor: '#1B264F', boxShadow: 'none'}} className={Styles.content}>
-        <div className={Styles.result}>
-          <Accordion defaultActiveKey="0">
-            <Accordion.Item eventKey="0" id='resultado' className={Styles.card}>
-              <Accordion.Header className={Styles.cardHeader}>
-                <h3>Poupança</h3>
-              </Accordion.Header>
-              <Accordion.Body className={Styles.cardBody}>
-                <p>Valor Total Investido: <span>{formatarNumero(valorAplicacao + investimentoMensal * (diasVencimento / 30))}</span></p>
-                <p>Rendimento Bruto: <span>{rendimentoBrutoPoupanca}</span></p>
-              </Accordion.Body>
-              <div lassName={Styles.sectionValueLiquid}>
-                <p className={Styles.textTotalLiquido}>Total Líquido:</p>
-                <p style={{backgroundColor: 'rgb(241, 15, 15)'}} className={Styles.textValorTotalLiquido}>{rendimentoPoupanca}</p>
-              </div>
-            </Accordion.Item>
-            <Accordion.Item eventKey="1" className={Styles.card}>
-              <Accordion.Header className={Styles.cardHeader}>
-                <h3>CDB/RDB/LC</h3>
-              </Accordion.Header>
-              <Accordion.Body className={Styles.cardBody}>
-                  <p>Valor Total Investido: <span>{formatarNumero(valorAplicacao + investimentoMensal * (diasVencimento / 30))}</span></p>
-                  <p>Rendimento Bruto: <span>{rendimentoBrutoCdb}</span></p>
-                  <p style={{color:'red'}}>Imposto de Renda: <span>{impostoCdb}</span></p>
-              </Accordion.Body>
-              <div lassName={Styles.sectionValueLiquid}>
-                <p className={Styles.textTotalLiquido}>Total Líquido:</p>
-                <p style={{backgroundColor: 'rgb(243, 142, 26)'}} className={Styles.textValorTotalLiquido}>{rendimentoLiquidoCdb}</p>
-              </div>
-            </Accordion.Item>
-            <Accordion.Item eventKey="2" className={Styles.card}>
-              <Accordion.Header className={Styles.cardHeader}>
-                <h3>LCI/LCA</h3>
-              </Accordion.Header>
-              <Accordion.Body className={Styles.cardBody}>
-                  <p>Valor Total Investido: <span>{formatarNumero(valorAplicacao + investimentoMensal * (diasVencimento / 30))}</span></p>
-                  <p>Rendimento Bruto: <span>{rendimentoBrutoLci}</span></p>
-              </Accordion.Body>
-              <div lassName={Styles.sectionValueLiquid}>
-                <p className={Styles.textTotalLiquido}>Total Líquido:</p>
-                <p style={{backgroundColor: 'rgb(7, 168, 7)'}} className={Styles.textValorTotalLiquido}>{rendimentoLci}</p>
-              </div>
-            </Accordion.Item>
-          </Accordion>
+      <div className={Styles.contentContato}>
+        <h1>Quer aprofundar seu conhecimento em investimentos?</h1>
+        <p>Vamos conversar pelo WhatsApp!</p>
+        <div className={Styles.containerButtonWPP}>
+            <a href="https://wa.link/xkkbli" target="_blank">
+              <div className={Styles.bgImageLogoWPP}></div>
+              <p>
+                FALAR COM ESPECIALISTA
+              </p>
+            </a>
         </div>
       </div>
     </div>
